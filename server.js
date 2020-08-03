@@ -10,7 +10,14 @@ app.use('/public', express.static('public'));
 app.use('/articles', articleRouter);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    const articles = [
+        {
+            title: 'Mern tutorial without the r of React',
+            date: Date.now(),
+            description: 'Webdev Simplyfied node and mongo tutorial'
+        }
+    ];
+    res.render('index', {articles});
 })
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT));

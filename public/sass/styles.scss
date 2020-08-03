@@ -1,12 +1,40 @@
 /*■■■■■■■■■■■■■■■■■■■■■■■■ Declarations */
+
+@import 'reset';
+
+$orange-1: #fb5607;
+$blue-1: #2ec4b6;
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■ Core */
 
-*{margin: 0; padding: 0; box-sizing: border-box;}
-body{font-family: Verdana, Geneva, Tahoma, sans-serif; background: #222; color: #fff;}
+body{font-family: Ubuntu, serif; background: #181818; color: #fff; text-align: justify;}
+.wrapper{max-width: 1000px; margin: 0 auto; box-sizing: border-box; background: rgba(#fff, 0.1); padding: 20px; border-radius: 10px; box-shadow: inset 0 0 5px rgba(#fff, 0.2);}
+h1{font-size: 2rem; color: $blue-1;}
+h2{font-size: 1.5rem; color: $blue-1;}
 
-/*■■■■■■■■■■■■■■■■■■■■■■■■ Initial */
+/*■■■■■■■■■■■■■■■■■■■■■■■■ Header */
 
-h1{font-size: 4rem; text-align: center;}
+header{
+    padding: 30px 0; text-align: center;
 
-/*■■■■■■■■■■■■■■■■■■■■■■■■  */
+    .title{font-size: 3.5rem; text-shadow: -2px 2px 2px rgba($orange-1, 0.5);}
+    span{text-transform: uppercase; font-weight: bold; color: $orange-1; text-shadow: none;}
+}
+
+/*■■■■■■■■■■■■■■■■■■■■■■■■ Main */
+
+main{
+    .article{
+        padding: 20px; border: 1px solid rgba($orange-1, 0.2); border-radius: 5px; margin-bottom: 20px; background: rgba(#000, 0.2);
+
+        p{margin-bottom: 15px;}
+        &:last-child{margin-bottom: 0;}
+        .date{text-transform: uppercase; font-weight: bold; margin: 10px 0 15px; font-size: 0.8rem;}
+    }
+    button{
+        text-transform: uppercase; font-size: 0.9rem; padding: 7px 15px; font-family: Ubuntu, serif; margin-right: 10px; background: #111; color: #fff; border: 1px solid rgba($orange-1, 0.2); border-radius: 7px; cursor: pointer;
+        &:hover{border: 1px solid $orange-1;}
+    }
+}
+
 /*■■■■■■■■■■■■■■■■■■■■■■■■  */
