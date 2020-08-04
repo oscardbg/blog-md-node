@@ -32,9 +32,9 @@
                     <h1><%= article.title %></h1>
                     <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
                     <p><%= article.description %></p>
-                    <a href="/articles/<%= article.id %>" class="read">Read More</a>
+                    <a href="/articles/<%= article.slug %>" class="read">Read More</a>
                     <a href="#" class="edit">Edit</a>
-                    <form action="" id="frm-delete">
+                    <form action="/articles/<%= article.id %>?_method=DELETE" id="frm-delete" method="POST">
                         <button type="submit" class="delete">Delete</button>
                     </form>
                 </div>

@@ -1,15 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 const Article = require('./models/article');
 const articleRouter = require('./routes/articles');
+const router = require('./routes/articles');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false}));
+app.use(methodOverride('_method'));
 
-mongoose.connect('mongodb://localhost/blogdb', { useNewUrlParser: true,  useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/blogdb', { useNewUrlParser: true,  useUnifiedTopology: true, useCreateIndex: true });
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
