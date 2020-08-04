@@ -32,7 +32,7 @@
                     <h1><%= article.title %></h1>
                     <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
                     <p><%= article.description %></p>
-                    <a href="#" class="read">Read More</a>
+                    <a href="/articles/<%= article.id %>" class="read">Read More</a>
                     <a href="#" class="edit">Edit</a>
                     <form action="" id="frm-delete">
                         <button type="submit" class="delete">Delete</button>

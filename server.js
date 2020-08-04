@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const Article = require('./models/article');
 const articleRouter = require('./routes/articles');
 
 const app = express();
@@ -14,19 +15,15 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use('/articles', articleRouter);
 
-app.get('/', (req, res) => {
-    const articles = [
-        {
-            title: 'Mern tutorial without the r of React',
-            createdAt: new Date(),
-            description: 'Webdev Simplyfied node and mongo tutorial'
-        },
-        {
-            title: 'Angular Js',
-            createdAt: new Date(),
-            description: 'Webdev Simplyfied angular tutorial'
-        }
-    ];
+app.get('/', async (req, res) => {
+    //Method 1
+    /* Article.find({}, (err, data) => {
+        if(err) throw err;
+        res.render('articles/index', { articles: data });
+    }); */
+    
+    //Method 2, needs await async to work
+    const articles = await Article.find().sort({ createdAt: 'desc' });
     res.render('articles/index', {articles});
 })
 
