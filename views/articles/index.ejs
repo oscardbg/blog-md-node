@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="title">MarkDown <span>Blog</span></div>
+        </div>
+    </header>
+    <a href="/articles/new" class="new">Add Article</a>
+    <main>
+        <div class="wrapper">
+
+            <!-- <div class="article">
+                <h1>Mern Tutorial</h1>
+                <div class="date">2020-10-18</div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad laudantium reiciendis et ipsum, voluptate porro nostrum maiores nihil eos veniam.</p>
+                <a href="#" class="read">Read More</a>
+                <a href="#" class="edit">Edit</a>
+                <form action="">
+                    <button type="submit" class="delete">Delete</button>
+                </form>
+            </div> -->
+
+            <% articles.forEach(article => { %>
+                <div class="article">
+                    <h1><%= article.title %></h1>
+                    <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
+                    <p><%= article.description %></p>
+                    <a href="#" class="read">Read More</a>
+                    <a href="#" class="edit">Edit</a>
+                    <form action="" id="frm-delete">
+                        <button type="submit" class="delete">Delete</button>
+                    </form>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+</body>
+</html>
