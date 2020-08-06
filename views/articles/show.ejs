@@ -12,9 +12,9 @@
             <h1><%= article.title %></h1>
             <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
             <a href="/">All Articles</a>
-            <a href="/articles/edit/<%= article.slug %>">Edit</a>
+            <a href="/articles/edit/<%= article.id %>">Edit</a>
             <p><%= article.description %></p>
-            <p><%= article.markdown %></p>
+            <p><%- article.sanitizedHtml %></p><!-- Strict html instead of string -->
         </div>
     </main>
 </body>
