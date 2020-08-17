@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Show Article</title>
+</head>
+<body>
+    <main>
+        <div class="wrapper show">
+            <h1><%= article.title %></h1>
+            <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
+            <a href="/">All Articles</a>
+            <a href="/articles/edit/<%= article.id %>">Edit</a>
+            <p><%= article.description %></p>
+            <p><%- article.sanitizedHtml %></p><!-- Strict html instead of string -->
+        </div>
+    </main>
+</body>
+</html>
